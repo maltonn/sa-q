@@ -1,0 +1,186 @@
+<!doctype html>
+<script src="https://kit.fontawesome.com/6bf73f35ec.js" crossorigin="anonymous"></script>
+<html lang="ja">
+<head>
+    <meta  charset="UTF-8">
+    <meta name="viewport" content="width=650">
+    <title id='page_title'>個人ページ</title>
+<link rel="stylesheet" href="../static/css/profile.css">
+</head>
+<header>
+  <h1 id='page_title_h1'>イベント参加ログ</h1>
+</header>
+<body>
+  <div id="content">
+    <div class="profile">
+      <h2><span class="line">プロフィール</span></h2>
+
+      <section class="pr"> <img id='icon' src="" class="pr_photo">
+        <div id='user_settings_btn' class="buttons">
+          <a href='/user-settings'>プロフィールを編集</i></a>
+        </div>
+          <!--
+          <div class="buttons">
+            <button type="button">友達一覧</i></button>
+          </div>
+          -->
+        <h1 id='username'></h1>
+        <div>
+          <i class="fas fa-map-marker-alt"></i>
+          <span id='religion'></span>
+        </div>
+        <div class="icon-social">
+          <a id='github' href="https://www.sejuku.net/courses/"><i class="fab fa-github"></i></a>
+          <a id='twitter' href="https://www.sejuku.net/courses/"><i class="fab fa-twitter"></i></a>
+          <a id='instagram' href="https://www.sejuku.net/courses/"><i class="fab fa-instagram"></i></a>
+          <a id='facebook' href="https://www.sejuku.net/courses/"><i class="fab fa-facebook"></i></a>
+          <a id='linkedin' href="https://www.sejuku.net/courses/"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div id='introduction' class ="pr_message"></div>
+
+      </section>
+    </div>  
+
+    <div class="event">
+      <div class="events-headding-wrapper">
+        <div>
+          <h2>参加イベント</h2>
+        </div>
+        <div id='plus' class="plus">
+          <a href="#modal-01"><i class="far fa-plus-square"></i></a>
+        </div>
+    </div>
+
+      <div class="events-wrapper">
+      <div id="study_events" class="study">
+        <h3>勉強会</h3>
+        <!--
+          <div class="study_event">
+            <h4>【エンジニア向けオンライン勉強会】<br>
+              Git&GitHubハンズオン！~ステップアップ編~</h4>
+            <details>    
+              <div>  
+                <i class="fas fa-calendar-day"></i>
+                <span>3月17日(水) 19:00-20:30</span>
+              </div>
+              <div>
+                <i class="fas fa-map-marker-alt"></i>   
+                <span>オンライン</span>
+              </div>
+              <div>
+              <i class="fas fa-tags"></i>
+              <span>Git,GitHub</span>
+              <div>
+                <i class="fas fa-pager"></i>
+                <a href="https://talent.supporterz.jp/events/52f738fd-974e-4444-80d4-02b3f900aafd/">イベントページ</a>; 
+              </div>
+            </details>
+          </div>
+          <div class="study_event">
+            <h4>【エンジニア向けオンライン勉強会】<br>
+              Git&GitHubハンズオン！~ステップアップ編~</h4>
+            <details>
+              <div>  
+                <i class="fas fa-calendar-day"></i>
+                <span>3月17日(水) 19:00-20:30</span>
+              </div>
+              <div>
+                <i class="fas fa-map-marker-alt"></i>   
+                <span>オンライン</span>
+              </div>
+              <div>
+              <i class="fas fa-tags"></i>
+              <span>Git,GitHub</span>
+              <div>
+                <i class="fas fa-pager"></i>
+                <a href="https://talent.supporterz.jp/events/52f738fd-974e-4444-80d4-02b3f900aafd/">イベントページ</a>&emsp; 
+              </div>
+            </details>
+          </div>
+        -->
+        </div>
+          <!-- </section> -->
+          <!--study_event end-->
+          
+        <div id="hackathon_events" class="hackathon">
+          <h3>ハッカソン</h3>
+          <!--
+          <div  class="hackathon_event">
+            <h4>初めてのハッカソン　~オンライン開発合宿vol.1~</h4>
+            <details>
+              <div>  
+                <i class="fas fa-calendar-day"></i>
+                <span>3月17日(水) 19:00-20:30</span>
+              </div>
+              <div>
+                <i class="fas fa-map-marker-alt"></i>   
+                <span>オンライン</span>
+              </div>
+              <div>
+              <i class="fas fa-tags"></i>
+              <span>Git,GitHub</span>
+              <div>
+                <i class="fas fa-pager"></i>
+                <a href="https://talent.supporterz.jp/events/52f738fd-974e-4444-80d4-02b3f900aafd/">イベントページ</a>&emsp; 
+              </div>
+            </details>
+          </div>
+      
+          <div class="hackathon_event">
+            <h4>初めてのハッカソン　~オンライン開発合宿vol.1~</h4>
+            <details>
+              <div>  
+                <i class="fas fa-calendar-day"></i>
+                <span>3月17日(水) 19:00-20:30</span>
+              </div>
+              <div>
+                <i class="fas fa-map-marker-alt"></i>   
+                <span>オンライン</span>
+              </div>
+              <div>
+              <i class="fas fa-tags"></i>
+              <span>Git,GitHub</span>
+              <div>
+                <i class="fas fa-pager"></i>
+                <a href="https://talent.supporterz.jp/events/52f738fd-974e-4444-80d4-02b3f900aafd/">イベントページ</a>&emsp; 
+              </div>
+            </details>
+          </div>
+            -->
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <!--work end--> 
+
+  <!-- モーダル-->
+  <div class="modal-wrapper" id="modal-01">
+    <a href="#!" class="modal-overlay"></a>
+    <div class="modal-window">
+      <div class="modal-content">
+        <form class="form">
+          <div class="form__field">
+            <div class="input-group">
+              <label class="input-group__label">イベントSecret</label>
+                  <input id='secret_inp' class="input-group__input" type="text" required>
+              </div>
+              <button id='add_event_btn' class="button" type="button">登録</button>
+              <a href='/event-resister'>イベントの主催者ですか？</a>
+        </form>
+      </div>
+      <a href="#!" class="modal-close">×</a>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <script src='../static/js/config.js'></script>
+  <script src='../static/js/functions.js'></script>
+  <script src='../static/js/main.js'></script>
+  <script src='../static/js/user.js'></script>
+  <script src='../static/js/event_add.js'></script>
+</body>
+</html>

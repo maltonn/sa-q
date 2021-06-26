@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <title>勉強会詳細</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/css/event-details.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!--戻るボタン-->
+    <div class="icon arrow" onclick="history.back()"><i class="fas fa-arrow-left"></i></div>
+    <!--イベント名-->
+    <div class="event-wrapper">
+      <div class="name" id='title'></div>
+
+      <!--イベント情報-->
+      <div class="event-info-wrapper">
+        <div class="event-info">
+          <i class="far fa-calendar"></i><span id='date'></span>
+        </div>
+        <div class="event-info">
+          <i class="fas fa-map-marker-alt"></i><span id='place'></span>
+        </div>
+        <!--
+        <div class="event-info">
+          <i class="fas fa-hashtag"></i>
+          <span><a href="#">タグ1</a>,<a href="#"></a></span>
+        </div>
+        -->
+      </div>
+
+      <!--イベント説明-->
+      <div class="about">
+        <p id='description'></p>
+      </div>
+    </div>
+
+    <div class="items">
+
+      <!-- item -->
+
+      <div id='users_container' class="buttons">
+        <!--
+        <a href='user?uid=HosuNAtMrLUejZ7JjvmrQxBVFT32'>
+          <div class=button-container>
+            <img src="../static/img/profile.png" title="profile img">
+            <span>参加者1</span>
+          </div>
+        </a>
+      -->
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <script src='../static/js/config.js'></script>
+  <script src='../static/js/functions.js'></script>
+  <script src='../static/js/event_details.js'></script>
+  <script src='../static/js/main.js'></script>
+
+</html>

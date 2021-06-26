@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id='main_title'>オブジェクトを登録</title>
+    <link rel='stylesheet' href='../css/style.css'>
+    <link rel='stylesheet' href='../css/uikit.min.css'>
+    <link rel='stylesheet' href='../css/uikit-rtl.min.css'>
+</head>
+
+<body>
+    <div id='loader' class="bottom" uk-spinner="ratio: 2"></div>
+    <div class="uk-flex uk-flex-center uk-flex-middle uk-margin uk-padding ">
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-width-1-1@s">
+            <h1 id="main_title_h1">オブジェクトを登録</h1>
+            <h1 class="uk-heading-divider uk-margin-bottom uk-margin-small-top"></h1>
+            <fieldset id="main" class="uk-fieldset">
+                <div class="uk-margin">
+                    <legend class="uk-legend">title</legend>
+                    <div class="uk-margin"><input id="title" class="uk-input" type="text" placeholder=""></div>
+                </div>
+                <div class="uk-margin">
+                    <legend class="uk-legend">description</legend>
+                    <div class="uk-margin"><input id="description" class="uk-input" type="text" placeholder=""></div>
+                </div>
+                <div class="uk-margin" uk-margin>
+                    <div uk-form-custom="target: true">
+                        <input id='obj' type="file">
+                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                    </div>
+                </div>
+                <button id="send_btn" class="uk-button uk-button-primary">登録！</button>
+            </fieldset>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+    <script src='../js/uikit.min.js'></script>
+    <script src='../js/uikit-icons.min.js'></script>
+    <script src='../js/config.js'></script>
+    <script src='../js/functions.js'></script>
+    <script src='../js/input.js'></script>
+</body>
+
+</html>
