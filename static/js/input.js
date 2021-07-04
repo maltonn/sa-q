@@ -1,8 +1,9 @@
 loader.style.display = 'none'
+
 GE('send_btn').addEventListener('click', () => {
   loader.style.display = 'block'
   
-  var file = GE('obj').files[0]
+  var file = GE('obj_input').files[0]
   console.log(file)
   filename = file.name
   tmp = filename.split('.')
@@ -11,7 +12,8 @@ GE('send_btn').addEventListener('click', () => {
     title: GE('title').value,
     description: GE('description').value,
     filename: filename,
-    inner_filename: inner_filename 
+    inner_filename: inner_filename,
+    username:'anymous',
   }
   db.collection("obj").doc(inner_filename).set(data)
     .then(() => {
@@ -23,11 +25,15 @@ GE('send_btn').addEventListener('click', () => {
       window.alert(error)
     })
 
+  // Create a root reference
+  var storageRef = firebase.storage().ref();
 
-  storageRef = storage.ref('obj/'+inner_filename);
-  storageRef.put(file).then((snapshot) => {
+  // Create a reference to 'mountains.jpg'
+  var mountainsRef = storageRef.child(inner_filename);
+  mountainsRef.put(file).then((snapshot) => {
     loader.style.display = 'none'
     console.log('Uploaded a blob or file!');
+    location.reload();
   }).catch((error) => {
     loader.style.display = 'none'
     console.error(error)

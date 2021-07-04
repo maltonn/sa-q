@@ -11,4 +11,3 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   db = firebase.firestore();
-  storage = firebase.storage();

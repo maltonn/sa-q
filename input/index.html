@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id='main_title'>オブジェクトを登録</title>
-    <link rel='stylesheet' href='../css/style.css'>
-    <link rel='stylesheet' href='../css/uikit.min.css'>
-    <link rel='stylesheet' href='../css/uikit-rtl.min.css'>
+    <link rel='stylesheet' href='../static/css/style.css'>
+    <link rel='stylesheet' href='../static/css/uikit.min.css'>
+    <link rel='stylesheet' href='../static/css/uikit-rtl.min.css'>
 </head>
 
 <body>
@@ -18,16 +18,17 @@
             <h1 class="uk-heading-divider uk-margin-bottom uk-margin-small-top"></h1>
             <fieldset id="main" class="uk-fieldset">
                 <div class="uk-margin">
-                    <legend class="uk-legend">title</legend>
-                    <div class="uk-margin"><input id="title" class="uk-input" type="text" placeholder=""></div>
+                    <legend class="uk-legend">タイトル</legend>
+                    <div class="uk-margin"><input id="title" class="uk-input" type="text" placeholder="" ></div>
                 </div>
                 <div class="uk-margin">
-                    <legend class="uk-legend">description</legend>
+                    <legend class="uk-legend">コメント</legend>
                     <div class="uk-margin"><input id="description" class="uk-input" type="text" placeholder=""></div>
                 </div>
                 <div class="uk-margin" uk-margin>
+                    <legend class="uk-legend">3Dオブジェクト(zipで固めたfbxのみ)</legend>
                     <div uk-form-custom="target: true">
-                        <input id='obj' type="file">
+                        <input id='obj_input' type="file" accept=".zip">
                         <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
                     </div>
                 </div>
@@ -35,16 +36,15 @@
             </fieldset>
         </div>
     </div>
-
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
-    <script src='../js/uikit.min.js'></script>
-    <script src='../js/uikit-icons.min.js'></script>
-    <script src='../js/config.js'></script>
-    <script src='../js/functions.js'></script>
-    <script src='../js/input.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
+    <script src='../static/js/uikit.min.js'></script>
+    <script src='../static/js/uikit-icons.min.js'></script>
+    <script src='../static/js/config.js'></script>
+    <script src='../static/js/functions.js'></script>
+    <script src='../static/js/input.js'></script>
 </body>
 
 </html>
