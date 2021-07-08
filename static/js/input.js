@@ -14,6 +14,7 @@ GE('send_btn').addEventListener('click', () => {
     filename: filename,
     inner_filename: inner_filename,
     username:'anymous',
+    time:new Date.now(),
   }
   db.collection("obj").doc(inner_filename).set(data)
     .then(() => {
