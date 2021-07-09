@@ -25,13 +25,13 @@ firebase.auth().onAuthStateChanged(function (user) {
         displayName: GE('username_inp').value,
       }).then(function () {
         console.log('update successfuly')
-        location.href = '/input'
+        location.href = '/sa-q/input'
       }).catch(function (error) {
         console.warn(error)
         window.alert(error)
       });
     }else{
-      location.href = '/input'
+      location.href = '/sa-q/input'
     }
 
   }

@@ -20,6 +20,6 @@ GE('login_btn').addEventListener('click',()=>{
 firebase.auth().onAuthStateChanged(function(user) {
     console.log(user)
     if (user) {
-        location.href='/input'
+        location.href='/sa-q/input'
     }
 });
