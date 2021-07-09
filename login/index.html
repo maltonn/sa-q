@@ -3,49 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id='main_title'>オブジェクトを登録</title>
     <link rel='stylesheet' href='../static/css/style.css'>
     <link rel='stylesheet' href='../static/css/uikit.min.css'>
     <link rel='stylesheet' href='../static/css/uikit-rtl.min.css'>
+    <title>ログイン</title>
 </head>
 
 <body>
-    <div id='loader' class="bottom" uk-spinner="ratio: 2"></div>
+
+
     <div class="uk-flex uk-flex-center uk-flex-middle uk-margin uk-padding ">
         <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-width-1-1@s">
-            <h1 id="main_title_h1">オブジェクトを登録</h1>
+            <h1 id="main_title_h1">ログイン</h1>
             <h1 class="uk-heading-divider uk-margin-bottom uk-margin-small-top"></h1>
             <fieldset id="main" class="uk-fieldset">
                 <div class="uk-margin">
-                    <legend class="uk-legend">タイトル</legend>
-                    <div class="uk-margin"><input id="title" class="uk-input" type="text" placeholder="" ></div>
+                    <legend class="uk-legend">E-mail</legend>
+                    <div class="uk-margin"><input id="email_inp" class="uk-input" type="text" placeholder="hoge@example.com" ></div>
                 </div>
                 <div class="uk-margin">
-                    <legend class="uk-legend">コメント</legend>
-                    <div class="uk-margin"><input id="description" class="uk-input" type="text" placeholder=""></div>
+                    <legend class="uk-legend">パスワード</legend>
+                    <div class="uk-margin"><input id="password_inp" type="password" class="uk-input" type="text" placeholder=""></div>
                 </div>
-                <div class="uk-margin" uk-margin>
-                    <legend class="uk-legend">3Dオブジェクト(zipで固めたfbxのみ)</legend>
-                    <div uk-form-custom="target: true">
-                        <input id='obj_input' type="file" accept=".zip">
-                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
-                    </div>
+
+                <button id='login_btn' class="uk-button uk-button-primary" type="button"><i class="icon ion-md-lock"></i> LOG IN</button>
+                <div class='uk-margin'>
+                    <span>まだアカウントを持っていませんか？</span><a href='/resister' >新規登録</a>
                 </div>
-                <button id="send_btn" class="uk-button uk-button-primary">登録！</button>
             </fieldset>
         </div>
     </div>
+
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
     <script src='../static/js/uikit.min.js'></script>
     <script src='../static/js/uikit-icons.min.js'></script>
     <script src='../static/js/config.js'></script>
     <script src='../static/js/functions.js'></script>
-    <script src='../static/js/input.js'></script>
+    <script src='../static/js/login.js'></script>
 </body>
 
 </html>

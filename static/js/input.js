@@ -1,3 +1,15 @@
+if(loader){
+  loader.style.display='None'
+}
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        display_name = user.displayName;
+        my_uid=user.uid;
+    }else{
+        location.href='/login'
+    }
+});
+
 loader.style.display = 'none'
 
 GE('send_btn').addEventListener('click', () => {
@@ -8,13 +20,15 @@ GE('send_btn').addEventListener('click', () => {
   filename = file.name
   tmp = filename.split('.')
   inner_filename = RandomStr(12)+ '.' + tmp[tmp.length - 1]
+
   data={
     title: GE('title').value,
     description: GE('description').value,
     filename: filename,
     inner_filename: inner_filename,
-    username:'anymous',
-    time:new Date.now(),
+    uid:my_uid,
+    username:display_name,
+    timestamp:firebase.firestore.FieldValue.serverTimestamp(),
   }
   db.collection("obj").doc(inner_filename).set(data)
     .then(() => {
