@@ -1,3 +1,15 @@
+var display_name='';
+var my_uid;
+if(loader){
+    loader.style.display='None'
+}
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        display_name = user.displayName;
+        my_uid=user.uid;
+    }
+});
 
 params = {}
 try {
@@ -13,7 +25,9 @@ window.onload = () => {
     db.collection("obj").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             console.log(doc.id, " => ", doc.data());
-            L.push(doc.data())
+            dic = doc.data()
+            dic['id'] = doc.id
+            L.push(dic)
         });
         MakeTable(L)
     });
@@ -61,9 +75,51 @@ function MakeTable(data) {
                 date = new Date
                 td.innerText = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
             }
+
+            tr.setAttribute('data-inner_filename', d['inner_filename']) ///
+            tr.setAttribute('data-id', d['id']) ///
+
             tr.appendChild(td)
         }
         if (flag) {
+
+            if (display_name==tr.querySelectorAll('td')[keys_lst.indexOf('username')].innerText) { //ログインしてるユーザーとアップロードしたユーザーが同じなら、消すアイコンを設置
+                td = document.createElement('td')
+                icon = document.createElement('button')
+                icon.setAttribute('uk-icon', 'icon: trash')
+                icon.style.color = 'black'
+                icon.classList.add('pointer', 'uk-button', 'uk-button-link')
+                td.appendChild(icon)
+                tr.appendChild(td)
+
+
+                icon.addEventListener('click', function () {
+                    tr = this.parentNode.parentNode
+                    innner_filename = tr.getAttribute('data-inner_filename')
+                    if (!window.confirm('削除しますか？')) {
+                        return
+                    }
+
+                    //storageからの削除
+                    firebase.storage().ref().child(innner_filename).delete().then(function () {
+                        console.log('object successfully deleted')
+                        tr.outerHTML = ''
+                    }).catch(function (error) {
+                        console.log("Error removing object: ", error)
+                    });
+
+                    //DBからの削除
+                    id = tr.getAttribute('data-id')
+                    db.collection("obj").doc(id).delete().then(() => {
+                        console.log("Document successfully deleted!");
+                    }).catch((error) => {
+                        console.error("Error removing document: ", error);
+                    });
+
+                })
+            }
+
+
             main_body.appendChild(tr)
         }
     }

@@ -1,3 +1,5 @@
+var display_name;
+var my_uid;
 if(loader){
   loader.style.display='None'
 }
