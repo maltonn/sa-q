@@ -6,7 +6,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         display_name = user.displayName;
         my_uid=user.uid;
     }else{
-        location.href='/login'
+        location.href='/sa-q/login'
     }
 });
 
