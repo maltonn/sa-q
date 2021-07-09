@@ -83,16 +83,17 @@ function MakeTable(data) {
         }
         if (flag) {
 
+            td = document.createElement('td')
+            icon = document.createElement('button')
+            icon.setAttribute('uk-icon', 'icon: trash')
+            
+            icon.classList.add('pointer', 'uk-button', 'uk-button-link')
+            td.appendChild(icon)
+            tr.appendChild(td)
+            
+            
             if (display_name==tr.querySelectorAll('td')[keys_lst.indexOf('username')].innerText) { //ログインしてるユーザーとアップロードしたユーザーが同じなら、消すアイコンを設置
-                td = document.createElement('td')
-                icon = document.createElement('button')
-                icon.setAttribute('uk-icon', 'icon: trash')
-                icon.style.color = 'black'
-                icon.classList.add('pointer', 'uk-button', 'uk-button-link')
-                td.appendChild(icon)
-                tr.appendChild(td)
-
-
+                icon.style.color = 'red'
                 icon.addEventListener('click', function () {
                     tr = this.parentNode.parentNode
                     innner_filename = tr.getAttribute('data-inner_filename')
@@ -117,6 +118,10 @@ function MakeTable(data) {
                     });
 
                 })
+            }else{
+                icon.style.color = 'black'
+                icon.style.opacity =0;
+                icon.disabled = true
             }
 
 
